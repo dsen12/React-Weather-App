@@ -19,7 +19,7 @@ export default function Weather() {
     }
 
     function search() {
-        const apiKey = "2f3a84f610ac1012c680bf273e43949a";
+        const apiKey = "9cb72bec958f8fb02391985ed7b219d2";
         let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=Tokyo&appid=${apiKey}&units=metric`;
         axios.get(apiUrl).then(handleResponse);
     }
