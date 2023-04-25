@@ -11,7 +11,7 @@ export default function WeatherInfo(props) {
                 <div className="row">
                     <div className="col-8 flex">
                         <WeatherIcon code={props.data.icon} alt={props.data.description} size={52} />
-                        <WeatherTemperature celsisus={props.data.temperature} />
+                        <WeatherTemperature celsius={props.data.temperature} />
                         <ul className="left" >
                             <li>Precipitation: 40%</li>
                             <li>Humidity: {props.data.humidity} %</li>

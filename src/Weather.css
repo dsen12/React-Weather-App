@@ -44,16 +44,16 @@
     font-weight: 400;
     line-height: 56px;
     color: #202124;
-    margin: 0 2px 0 2px;
+    margin: 0 5px 0 10px;
 }
 
-.Weather .units {
+.Weather .unit {
     font-size: 16px;
     font-weight: 400;
     line-height: 1;
     color: #202124;
     position: relative;
-    top: -13px;
+    top: -22px;
     margin-right: 10px;
 }
 
