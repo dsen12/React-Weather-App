@@ -24,7 +24,7 @@ export default function WeatherTemperature(props) {
                 </span>
                 <span className="unit">
                     ºC | 
-                    <a href="/" onClick={showFahrenheit}>ºF</a>
+                    <a href="/" onClick={showFahrenheit}> ºF</a>
                 </span>
             </div>
         );
@@ -35,7 +35,7 @@ export default function WeatherTemperature(props) {
                     {Math.round(fahrenheit())}
                 </span>
                 <span className="unit">
-                <a href="/" onClick={showCelsius}>ºC</a>
+                <a href="/" onClick={showCelsius}>ºC </a>
                  | ºF
                 </span>
             </div>

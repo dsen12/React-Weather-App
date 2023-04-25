@@ -13,7 +13,6 @@ export default function WeatherInfo(props) {
                         <WeatherIcon code={props.data.icon} alt={props.data.description} size={52} />
                         <WeatherTemperature celsius={props.data.temperature} />
                         <ul className="left" >
-                            <li>Precipitation: 40%</li>
                             <li>Humidity: {props.data.humidity} %</li>
                             <li>Wind: {Math.round(props.data.wind)} km/h</li>
                         </ul>

@@ -8,3 +8,8 @@
   margin: 10px;
   text-align: center;
 }
+
+.App footer a {
+  text-decoration: none;
+  color: #777676;
+}

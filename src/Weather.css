@@ -1,9 +1,10 @@
 .Weather {
-    border: 1px solid #D9DCE0;
+    border: 2px solid #8b8b8b;
     color: #70757a;
     font-family: arial, sans-serif;
     padding: 16px;
     border-radius: 5px;
+    background-color: #f1f1f1;
 }
 
 .Weather h1 {
@@ -20,16 +21,16 @@
 }
 
 .Weather ul {
-    list-style: none;
     margin: 0;
     padding: 0;
+    list-style: none;
 }
 
 .Weather .left {
     text-align: left;
-    font-size: 12px;
-    line-height: 16px;
     margin-left: 5px;
+    font-size: 12px;
+    line-height: 20px;
 }
 
 .Weather .right {
@@ -61,4 +62,9 @@
     display: flex;
     align-items: center;
     flex-direction: row;
+}
+
+.Weather a {
+    text-decoration: none;
+    color: #9d9d9d;
 }
