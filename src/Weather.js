@@ -1,14 +1,13 @@
 import React, { useState } from "react";
 import axios from "axios";
 import './Weather.css';
-import FormattedDate from "./FormattedDate";
+import WeatherInfo from "./WeatherInfo";
 
-export default function Weather() {
-    const [ready, setReady] = useState(false);
-    const [weatherData, setWeatherData] = useState({});
+export default function Weather(props) {
+    const [weatherData, setWeatherData] = useState({ ready: false});
+    const [city, setCity] = useState(props.defaultCity)
 
     function handleResponse(response) {
-        setReady(true);
         setWeatherData({
             ready: true,
             temperature: response.data.main.temp,
@@ -16,51 +15,41 @@ export default function Weather() {
             humidity: response.data.main.humidity,
             description: response.data.weather[0].description,
             icon: response.data.weather[0].icon,
-            date: new Date (response.data.dt * 1000)
+            date: new Date (response.data.dt * 1000),
+            city: response.data.name
         });
     }
 
     function search() {
-        const apiKey = "9cb72bec958f8fb02391985ed7b219d2";
-        let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=Tokyo&appid=${apiKey}&units=metric`;
+        const apiKey = "5f472b7acba333cd8a035ea85a0d4d4c";
+        let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
         axios.get(apiUrl).then(handleResponse);
+    }
+
+    function handleSubmit(event) {
+        event.preventDefault();
+        search();
+    }
+
+    function handleCityChange(event) {
+        setCity(event.target.value);
     }
     
 
-    if (ready) {
+    if (weatherData.ready) {
         return (
             <div className="Weather" >
-                <form>
+                <form onSubmit={handleSubmit}>
                     <div className="row">
                         <div className="col-9">
-                            <input type="search" className="form-control" autoFocus="on" placeholder="Enter a city.."/>
+                            <input type="search" className="form-control" autoFocus="on" placeholder="Enter a city.." onChange={handleCityChange}/>
                         </div>
                         <div className="col-3">
                             <input type="submit" className="btn btn-primary w-100" value="Search"/>
                         </div>
                     </div>
                 </form>
-                <h1>Tokyo</h1>
-                <div className="row">
-                    <div className="col-8 flex">
-                        <img src="https://ssl.gstatic.com/onebox/weather/64/cloudy.png" alt="cloudy" />
-                        <span className="temperature">{Math.round(weatherData.temperature)}</span><span className="units">ºC | F</span>
-                        <ul className="left" >
-                            <li>Precipitation: 40%</li>
-                            <li>Humidity: {weatherData.humidity} %</li>
-                            <li>Wind: {Math.round(weatherData.wind)} km/h</li>
-                        </ul>
-                    </div>
-                    <div className="col-4">
-                            <h4>Weather</h4>
-                        <ul className="right">
-                            <li>
-                                <FormattedDate date={weatherData.date} />
-                            </li>
-                            <li className="text-capitalize">{weatherData.description}</li>
-                        </ul>
-                    </div>
-                </div>
+                <WeatherInfo data={weatherData} />
             </div>
         );
     } else {
