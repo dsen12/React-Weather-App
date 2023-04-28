@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./WeatherForecast.css";
 import WeatherForecastDay from "./WeatherForecastDay";
 import axios from "axios";
@@ -6,12 +6,17 @@ import axios from "axios";
 export default function WeatherForecast(props) {
     let [loaded, setLoaded] = useState(false);
     let [forecastData, setForecastData] = useState(null);
+
     function handleResponse(response) {
         setForecastData(response.data.daily)
         setLoaded(true);
     }
 
-    if (loaded)  {
+    useEffect(() => {
+        setLoaded(false);
+    }, [props.coordinates]);
+
+    if (loaded) {
         return (
             <div className="WeatherForecast">
                 <div className="row">
@@ -27,6 +32,7 @@ export default function WeatherForecast(props) {
                 </div>
             </div>
          );
+         
     } else {
         let apiKey = "6bfa54f242cbb59343d4e58db578dc61";
         let longitude = props.coordinates.lon;
