@@ -31,6 +31,14 @@
     list-style: none;
 }
 
+.WeatherInfo .bottom-panel {
+    justify-content: space-between;
+}
+
+.WeatherInfo .last-updated {
+    font-size: 12px;
+}
+
 .WeatherInfo .flex {
     display: flex;
     align-items: center;
@@ -43,4 +51,5 @@
 
 .WeatherInfo .description {
     font-size: 25px;
+    font-weight: 500;
 }

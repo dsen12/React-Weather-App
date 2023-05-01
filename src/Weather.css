@@ -20,3 +20,8 @@
     background-color: var(--primary-color);
     color: var(--accent-color);
 }
+
+.Weather .search-panel {
+    display: flex;
+    justify-content: center;
+}

@@ -20,11 +20,9 @@ export default function Weather(props) {
             icon: response.data.weather[0].icon,
             date: new Date (response.data.dt * 1000),
             city: response.data.name,
-            sunrise: response.data.sys.sunrise,
-            sunset: response.data.sys.sunset,
+            sun: response.data.sys,
             feels: response.data.main.feels_like,
         });
-        console.log(response.data);
     }
     
     function search() {
@@ -41,22 +39,37 @@ export default function Weather(props) {
     function handleCityChange(event) {
         setCity(event.target.value);
     }
+
+    function searchLocation(position) {
+        let apiKey = "6bfa54f242cbb59343d4e58db578dc61";
+        let lat = position.coords.latitude;
+        let lon = position.coords.longitude;
+        let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
+        axios.get(apiUrl).then(handleResponse);
+      }
+
+    function findLocation(event) {
+        event.preventDefault();
+        navigator.geolocation.getCurrentPosition(searchLocation);
+      }
     
 
     if (weatherData.ready) {
         return (
             <div className="Weather" >
-                <div className="search-panel">
+                <div className="">
                     <form onSubmit={handleSubmit}>
-                        <div className="row g-1">
-                            <div className="col-6">
-                                <input type="search" className="form-control search-bar" autoFocus="on" placeholder="Enter a city.." onChange={handleCityChange}/>
+                        <div className="search-panel flex">
+                            <div className="">
+                                <input type="search" className="form-control w-100 search-bar" autoFocus="on" placeholder="Enter a city.." onChange={handleCityChange}/>
                             </div>
-                            <div className="col-4 ">
+                            <div className="ms-2">
                                 <input type="submit" className="btn search-button" value="GET WEATHER"/>
                             </div>
-                           <div className="col-2">
+                            <div className="current-location ms-2">
+                                <a href="" onClick={findLocation}>
                                 <img src={LocationPin} alt="" className="search-pin" width={35}/>
+                                </a>
                             </div>
                         </div>
                     </form>
