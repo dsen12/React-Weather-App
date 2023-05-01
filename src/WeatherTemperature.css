@@ -1,0 +1,28 @@
+.WeatherTemperature .TemperatureNumber {
+    font-weight: 700;
+    color: var(--tertiary-color);
+    font-size: 110px;
+    margin: 0 5px 0 10px;
+    font-family: var(--primary-font-family);
+    line-height: 56px;
+    -webkit-text-stroke: 2px var(--secondary-color);
+}
+
+.WeatherTemperature .outer {
+    font-size: 50px;
+}
+
+.WeatherTemperature .flex {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.WeatherTemperature .degree {
+    line-height: 0;
+}
+.WeatherTemperature .unit {
+    margin-top: 8px;
+    color: var(--primary-color);
+    -webkit-text-stroke: 2px var(--primary-color);
+}

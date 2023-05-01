@@ -1,0 +1,46 @@
+.WeatherInfo .headings {
+    margin: 30px 0;
+}
+
+.WeatherInfo h4 {
+    text-align: start;
+    padding: 0;
+    margin: 0;
+    color: #4E8D77;  
+    letter-spacing: 1px;
+}
+
+.WeatherInfo h1 {
+    text-align: start;
+    font-size: 60px;
+    text-transform: capitalize;
+    font-weight: 100;
+    color: #4E8D77;  
+    margin: 0;
+    letter-spacing: 2px;
+    font-family: monospace;
+}
+
+.WeatherInfo hr {
+    margin: 20px 0;
+}
+
+.WeatherInfo ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.WeatherInfo .flex {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+
+.WeatherInfo .left-info {
+    text-align: start;
+}
+
+.WeatherInfo .description {
+    font-size: 25px;
+}
