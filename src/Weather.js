@@ -20,7 +20,9 @@ export default function Weather(props) {
             icon: response.data.weather[0].icon,
             date: new Date (response.data.dt * 1000),
             city: response.data.name,
-            sun: response.data.sys,
+            sunriseTime: response.data.sys.sunrise,
+            sunsetTime: response.data.sys.sunset,
+            timezone: response.data.timezone / 3600,
             feels: response.data.main.feels_like,
         });
     }
@@ -29,6 +31,7 @@ export default function Weather(props) {
         const apiKey = "6bfa54f242cbb59343d4e58db578dc61";
         let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
         axios.get(apiUrl).then(handleResponse);
+        console.log(apiUrl)
     }
 
     function handleSubmit(event) {
@@ -60,14 +63,14 @@ export default function Weather(props) {
                 <div className="">
                     <form onSubmit={handleSubmit}>
                         <div className="search-panel flex">
-                            <div className="">
+                            <div>
                                 <input type="search" className="form-control w-100 search-bar" autoFocus="on" placeholder="Enter a city.." onChange={handleCityChange}/>
                             </div>
                             <div className="ms-2">
                                 <input type="submit" className="btn search-button" value="GET WEATHER"/>
                             </div>
                             <div className="current-location ms-2">
-                                <a href="" onClick={findLocation}>
+                                <a href="/" onClick={findLocation}>
                                 <img src={LocationPin} alt="" className="search-pin" width={35}/>
                                 </a>
                             </div>
@@ -80,6 +83,6 @@ export default function Weather(props) {
         );
     } else {
         search();
-        return "Loading...";
+        return "Loading weather app...";
     }
 }

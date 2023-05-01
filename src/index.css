@@ -2,6 +2,9 @@
 
 :root body {
     background: #4E8D77;
+    background-image: url(./images/4.jpg);
+    background-position: center;
+    background-size: cover;
    
 }
 :root {

@@ -14,11 +14,11 @@
     text-align: start;
     font-size: 60px;
     text-transform: capitalize;
-    font-weight: 100;
+    font-weight: 500;
     color: #4E8D77;  
     margin: 0;
     letter-spacing: 2px;
-    font-family: monospace;
+    font-family: var(--primary-font-family);
 }
 
 .WeatherInfo hr {
@@ -52,4 +52,12 @@
 .WeatherInfo .description {
     font-size: 25px;
     font-weight: 500;
+}
+
+.WeatherInfo .sunrise {
+    margin-right: 20px;
+}
+
+.WeatherInfo .sun-time img {
+    margin-right: 5px;
 }

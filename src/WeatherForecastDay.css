@@ -10,11 +10,11 @@
 
 .WeatherForecastDay .WeatherForecastDay-temperature-max {
     font-weight: 700;
-    color: #4E8D77;
+    color: var(--primary-color);
 }
 
 .WeatherForecastDay .WeatherForecastDay-temperature-min {
-    color: #B9CFAF;
+    color: rgba(37, 50, 57, 0.5);
 }
 
 
