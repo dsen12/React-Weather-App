@@ -29,18 +29,5 @@
   font-size: 50px;
   opacity: 0.7;
   color: var(--primary-color);
-  
 }
 
-.original-box-shadow {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #333333;
-  background-color: #b9c7da;
-  font-size: 30px;
-  width: 300px;
-  height: 100px;
-  border-radius: 3px;
-  box-shadow: -5px -5px 10px 0px rgba(255, 255, 255, 0.5), 5px 5px 10px 0px rgba(0, 0, 0, 0.3);
-}
