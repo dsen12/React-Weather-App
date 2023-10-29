@@ -17,4 +17,9 @@
     color: rgba(37, 50, 57, 0.5);
 }
 
+@media screen and (max-width: 491px) {
+    .WeatherForecastDay {
+        margin-top: 20px;
+    }
+}
 
