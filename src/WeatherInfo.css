@@ -31,12 +31,27 @@
     list-style: none;
 }
 
+.WeatherInfo .content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    /* text-align: center; */
+}
+
+/* .WeatherInfo .content col {
+    align-items: center;
+    justify-content: center;
+} */
+
 .WeatherInfo .bottom-panel {
     justify-content: space-between;
+    gap: 5px;
 }
 
 .WeatherInfo .last-updated {
     font-size: 12px;
+    margin-left: 20px;
 }
 
 .WeatherInfo .flex {
@@ -54,10 +69,54 @@
     font-weight: 500;
 }
 
-.WeatherInfo .sunrise {
-    margin-right: 20px;
+.WeatherInfo .sunrise, .sunset {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.WeatherInfo .sun-time img {
-    margin-right: 5px;
+.WeatherInfo .sun-time {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    gap: 20px;
+}
+
+@media screen and (max-width: 376px) {
+    .WeatherInfo h1 {
+        font-size: 32px;
+    }
+}
+
+@media screen and (max-width: 426px) {
+    .WeatherInfo .sun-time {
+        gap: 20px;
+    }
+
+    .WeatherInfo .bottom-panel {
+        flex-direction: column;
+        text-align: center;
+        gap: 5px;
+    }
+    
+    .WeatherInfo .last-updated {
+        margin-left: 0;
+    }
+}
+
+@media screen and (min-width: 376px) and (max-width: 767px) {
+    .WeatherInfo h1 {
+        font-size: 45px;
+    }
+}
+@media screen and (max-width: 767px) {
+    .WeatherInfo .content {
+        flex-direction: column-reverse;
+        gap: 20px;
+        padding: 30px 0;
+        margin-bottom: -20px;
+    }
+    .WeatherInfo .left-info {
+        text-align: center;
+    }
 }

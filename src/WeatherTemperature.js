@@ -5,7 +5,7 @@ export default function WeatherTemperature(props) {
     return (
         <div className="WeatherTemperature">
             <div className="temperature">
-                <div className="TemperatureNumber flex">
+                <div className="TemperatureNumber">
                 {Math.round(props.celsius)}
                     <div className="outer">
                         <div className="degree">o</div>

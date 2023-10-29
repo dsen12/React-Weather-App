@@ -62,17 +62,17 @@ export default function Weather(props) {
             <div className="Weather" >
                 <div className="">
                     <form onSubmit={handleSubmit}>
-                        <div className="search-panel flex">
-                            <div>
-                                <input type="search" className="form-control w-100 search-bar" autoFocus="on" placeholder="Enter a city.." onChange={handleCityChange}/>
-                            </div>
-                            <div className="ms-2">
-                                <input type="submit" className="btn search-button" value="GET WEATHER"/>
-                            </div>
-                            <div className="current-location ms-2">
-                                <a href="/" onClick={findLocation}>
-                                <img src={LocationPin} alt="" className="search-pin" width={35}/>
-                                </a>
+                        <div className="search-panel">
+                            <input type="search" className="form-control w-100 search-bar" autoFocus="on" placeholder="Enter a city.." onChange={handleCityChange}/>
+                            <div className="buttons">
+                                <div>
+                                    <input type="submit" className="btn search-button" value="GET WEATHER"/>
+                                </div>
+                                <div className="current-location ms-2">
+                                    <a href="/" onClick={findLocation}>
+                                    <img src={LocationPin} alt="" className="search-pin" width={35}/>
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </form>

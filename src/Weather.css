@@ -14,6 +14,7 @@
 
 .Weather .search-bar {
     border: 2px solid var(--secondary-color);
+    width: 50%;
 }
 
 .Weather .search-button {
@@ -24,6 +25,19 @@
 
 .Weather .search-panel {
     display: flex;
+    flex-direction: row;
     justify-content: center;
+    gap: 10px;
+}
+
+.Weather .buttons {
+    display: flex;
+    flex-direction: row;
+}
+
+@media screen and (max-width: 768px) {
+    .Weather .search-panel {
+        flex-direction: column;
+    }
 }
 

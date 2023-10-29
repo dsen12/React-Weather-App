@@ -30,12 +30,12 @@ export default function FormattedSunTime(props) {
     }
     
     return (
-        <div className="sun-time flex">
+        <div className="sun-time">
             <div className="sunrise">
                 <img src={sunrise} alt="Sunrise" width="25" /> 
                 {sunriseHours}:{sunriseMinutes}
             </div>
-            <div className="ml-5">
+            <div className="sunset">
                 <img src={sunset} alt="Sunrise" width="25" /> 
                 {sunsetHours}:{sunsetMinutes}
             </div>
